@@ -19,4 +19,5 @@ response = openai.ChatCompletion.create(
     ]
 )
 
+#printing the final response after making the API call
 print("the information is:" + response.choices[0].message.content + "\n")
