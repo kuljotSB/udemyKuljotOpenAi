@@ -4,9 +4,9 @@ import openai
 
 #setting openAI configurations
 openai.api_type = "azure"
-openai.api_base = os.getenv("azure_oai_endpoint")
+openai.api_base = os.getenv('azure_oai_endpoint')
 openai.api_version = "2023-03-15-preview"
-openai.api_key = os.getenv("azure_oai_key")
+openai.api_key = os.getenv('azure_oai_key')
 
 #Send request to Azure OpenAI model
 response = openai.ChatCompletion.create(
