@@ -9,6 +9,7 @@ openai.api_key = os.getenv('get_oai_key')
 openai.api_base = os.getenv('get_oai_base')
 openai.api_version = "2023-03-15-preview"
 deployment_name = "Your deployment name here"
+openai.api_type = "azure"
 
 api_url = "your_api_url_here"
 
