@@ -1,16 +1,18 @@
 #importing importing libraries
 import os
 import openai
+from dotenv import load_dotenv
 
 #setting openAI configurations
+load_dotenv()
 openai.api_type = "azure"
-openai.api_base = os.getenv('azure_oai_endpoint')
+openai.api_base = os.getenv('OPENAI_API_BASE')
 openai.api_version = "2023-03-15-preview"
-openai.api_key = os.getenv('azure_oai_key')
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 #Send request to Azure OpenAI model
 response = openai.ChatCompletion.create(
-    engine="YOUR_OAI_MODEL_HERE",
+    engine="prabhjotturbofm",
     temperature = 0.7,
     max_tokens=120,
     messages=[
