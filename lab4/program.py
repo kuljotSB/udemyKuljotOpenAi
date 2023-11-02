@@ -3,8 +3,10 @@ import openai
 import requests
 import os
 import json
+from dotenv import load_dotenv
 
 #setting important configurations
+load_dotenv()
 openai.api_key = os.getenv('oai_key')
 openai.api_base=os.getenv('oai_base')
 

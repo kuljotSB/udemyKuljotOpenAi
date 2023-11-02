@@ -3,6 +3,7 @@ import os
 import openai
 import json
 import requests
+from dotenv import load_dotenv
 
 #importing important libraries and utilities for azure speech service SDK
 import azure.cognitiveservices.speech as speech_sdk
@@ -10,6 +11,7 @@ import azure.cognitiveservices.speech as speech_sdk
 def main():
     global speech_config
     #loading speech configurations
+    load_dotenv()
     speech_key = os.getenv('speechService_key')
     speech_region = os.getenv('speechService_region')
     
