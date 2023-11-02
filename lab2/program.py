@@ -3,8 +3,10 @@ import json
 import requests
 import openai
 import os
+from dotenv import load_dotenv
 
 #setting openai configuration details
+load_dotenv()
 openai.api_key = os.getenv('get_oai_key')
 openai.api_base = os.getenv('get_oai_base')
 openai.api_version = "2023-03-15-preview"
