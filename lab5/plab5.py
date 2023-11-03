@@ -5,14 +5,8 @@ import json
 import openai
 from dotenv import load_dotenv
 
-#import namespaces
-from azure.core.credentials import AzureKeyCredential
-from azure.ai.language.conversations import ConversationAnalysisClient
-
 #setting configurations
 load_dotenv()
-ls_endpoint = os.getenv('ls_endpoint')
-ls_key = os.getenv('ls_key')
 openai.api_key=os.getenv('oai_key')
 openai.api_base=os.getenv('oai_base')
 
@@ -28,7 +22,7 @@ def getWeather(location):
     final_response=requests.get(url_final)
     final_message=final_response.content.weather[0].description
     print("the weather condition is:" , " " , final_message)
-
+    
 def run_conversation(messages, functions, available_functions, deployment_id):
     response=openai.ChatCompletion.create(
         deployment_id=deployment_id,
@@ -55,6 +49,8 @@ def run_conversation(messages, functions, available_functions, deployment_id):
 
 
 def main():
+    
+    
     functions=[
         {
             "name":"getWeather",
@@ -78,10 +74,13 @@ def main():
     {"role":"system", "content":"you are an assistant that retrieves real-time weather of a particular location"},
     {"role":"user", "content":"how is the weather in Mumbai, India"}
 ]
-    deployment_id="YOUR_DEPLOYMENT_ID"
+    deployment_id="prabhjotturbofm"
 
     run_conversation(messages=messages, functions=functions, available_functions=available_functions, deployment_id=deployment_id)
 
+if __name__=="__main__":
+    main()
+    
 
 
 
