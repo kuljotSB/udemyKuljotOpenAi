@@ -12,7 +12,7 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 
 #Send request to Azure OpenAI model
 response = openai.ChatCompletion.create(
-    engine="prabhjotturbofm",
+    engine="YOUR_ENGINE_NAME_HERE",
     temperature = 0.7,
     max_tokens=120,
     messages=[
