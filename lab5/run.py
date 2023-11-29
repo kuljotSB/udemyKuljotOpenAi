@@ -47,7 +47,7 @@ messages = [
 chat_response = openai.ChatCompletion.create(
     messages = messages,
     temperature = 0.7,
-    engine = "prabhjotturbofm"
+    engine = "YOUR_ENGINE_NAME_HERE"
 )
 
 #printing the final response from the ChatCompletions API 

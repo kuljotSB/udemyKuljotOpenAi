@@ -15,7 +15,7 @@ openai.api_version ="2023-09-15-preview"
 functions=[
         {
             "name":"getWeather",
-            "description":"Retrieve documents from the azure cognitive search index",
+            "description":"Retrieve real-time weather information/data about a particular location/place",
             "parameters":{
                 "type":"object",
                 "properties":{

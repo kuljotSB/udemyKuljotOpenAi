@@ -11,7 +11,7 @@ load_dotenv()
 openai.api_key = os.getenv('get_oai_key')
 openai.api_base = os.getenv('get_oai_base')
 openai.api_version = "2023-03-15-preview"
-deployment_name = "your_deployment_name"
+deployment_name = os.getenv('get_embed_model')
 openai.api_type = "azure"
 
 data="a lot of festivals are coming"
