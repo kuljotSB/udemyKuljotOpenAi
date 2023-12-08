@@ -1,15 +1,16 @@
 import json
 import requests
 import openai
+from openai import AzureOpenAI
 from dotenv import load_dotenv
 import os
 
-#setting configurations
-load_dotenv()
-openai.api_type="azure"
-openai.api_key=os.getenv('oai_key')
-openai.api_base=os.getenv('oai_base')
-openai.api_version ="2023-09-15-preview"
+#creating an Azure OpenAI client
+client = AzureOpenAI(
+  azure_endpoint = os.getenv("oai_key"), 
+  api_key=os.getenv("oai_base"),  
+  api_version="2023-05-15"
+)
 
 
 functions=[
@@ -36,14 +37,15 @@ messages=[
     
 ]
 
-initial_response=openai.ChatCompletion.create(
-    engine="YOUR_DEPLOYED_ENGINE",
-    messages=messages,
-    functions=functions,
-    max_tokens=120,
-    function_call="auto",
-    api_version="2023-09-15-preview"
+initial_response = client.chat.completions.create(
+    model="YOUR_MODEL_NAME", # model = "deployment_name".
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "How is the weather in Mumbai?"}
+    ]
+   functions=functions
 )
+
 
 response_message=initial_response["choices"][0]["message"]
 function_name=response_message["function_call"]["name"]
