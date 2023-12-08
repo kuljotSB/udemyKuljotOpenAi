@@ -1,6 +1,7 @@
 #importing namespaces
 import os
 import openai
+from openai import AzureOpenAI
 import json
 from dotenv import load_dotenv
 from azure.core.credentials import AzureKeyCredential
@@ -11,10 +12,13 @@ load_dotenv()
 index_name="YOUR_INDEX_NAME_HERE"
 endpoint = os.getenv('search_endpoint')
 key = os.getenv('search_key')
-openai.api_type = "azure"
-openai.api_base = os.getenv('oai_base')
-openai.api_version = "2023-09-15-preview"
-openai.api_key = os.getenv('oai_key')
+
+#creating an Azure OpenAI client
+client = AzureOpenAI(
+  azure_endpoint = os.getenv("oai_base"), 
+  api_key=os.getenv("oai_key"),  
+  api_version="2023-05-15"
+)
 
 #setting important variables
 max=0
@@ -44,10 +48,9 @@ messages = [
     {"role":"user", "content":sum}
 ]
 
-chat_response = openai.ChatCompletion.create(
-    messages = messages,
-    temperature = 0.7,
-    engine = "YOUR_ENGINE_NAME_HERE"
+chat_response = client.chat.completions.create(
+    model="YOUR_MODEL_NAME",
+    messages=messages
 )
 
 #printing the final response from the ChatCompletions API 
