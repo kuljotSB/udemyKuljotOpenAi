@@ -2,6 +2,7 @@
 import json
 import requests
 import openai
+from openai import AzureOpenAI
 import os
 from dotenv import load_dotenv
 from openai.embeddings_utils import get_embedding
