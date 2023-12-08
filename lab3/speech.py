@@ -1,6 +1,6 @@
 #importing important libraries and utilites for azure openAi model
 import os
-import openai
+from openai import AzureOpenAI
 import json
 import requests
 from dotenv import load_dotenv
@@ -31,23 +31,22 @@ speech = speech_recognizer.recognize_once_async().get()
 if speech.reason==speech_sdk.ResultReason.RecognizedSpeech:
     command=speech.text
 print(command)
-    
-#loading openAi configurations
-openai.api_key = os.getenv('oai_key')
-openai.api_base = os.getenv('oai_base')
-openai.api_version = "2023-03-15-preview"
-openai.api_type="azure"
+
+#creating an Azure OpenAI client
+client = AzureOpenAI(
+  azure_endpoint = os.getenv("oai_key"), 
+  api_key=os.getenv("oai_base"),  
+  api_version="2023-05-15"
+)
 
 #sending the speech input as text to the system in the form of a prompt and then receiving the output through ChatCompletions function
-response = openai.ChatCompletion.create(
-        engine="your_engine_name_here",
-        temperature=0.7,
-        max_tokens=120,
-        messages=[
-            {"role":"system", "content":"you are an assistant that helps people to fetch factual information"},
-            { "role":"user", "content":command}
-        ]
-    )
+response = client.chat.completions.create(
+    model="YOUR_MODEL_NAME", # model = "deployment_name".
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": command}
+    ]
+)
     
 print("the answer to your query is:" + response.choices[0].message.content + "\n")
     
