@@ -12,7 +12,7 @@ client = AzureOpenAI(
 
 #send request to Azure OpenAi model
 response = client.chat.completions.create(
-    model="gpt-35-turbo", # model = "deployment_name".
+    model="YOUR_MODEL_NAME", # model = "deployment_name".
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "list out all the players in the indian national cricket team?"}
