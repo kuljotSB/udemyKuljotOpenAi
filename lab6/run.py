@@ -27,7 +27,7 @@ def main():
         
         messages = [
             {"role":"system", "content":"you are an assistant that helps summarise text"},
-            {"role":"user", "content":text}
+            {"role":"user", "content":"summarise this text \n" + text}
         ]
         
         response = client.chat.completions.create(
