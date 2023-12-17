@@ -8,7 +8,7 @@ form_endpoint="YOUR_FORM_RECOGNIZER_ENDPOINT"
 form_key="YOUR_FORM_RECOGNIZER_KEY"
 
 oai_key="YOUR_AZURE_OAI_KEY"
-oai_endpoint="YOUR_AZURE_OAI_KEY"
+oai_endpoint="YOUR_AZURE_OAI_ENDPOINT_HERE"
 model_name="YOUR_AZURE_OAI_MODEL_HERE"
 
 client = AzureOpenAI(
