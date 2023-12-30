@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import os
 
 #creating an Azure OpenAI client
+load_dotenv()
 client = AzureOpenAI(
   azure_endpoint = os.getenv("oai_base"), 
   api_key=os.getenv("oai_key"),  
