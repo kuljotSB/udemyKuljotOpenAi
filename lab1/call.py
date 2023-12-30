@@ -4,6 +4,7 @@ from openai import AzureOpenAI
 from dotenv import load_dotenv
 
 #creating an azure openAi client
+load_dotenv()
 client = AzureOpenAI(
   azure_endpoint = os.getenv("OPENAI_API_BASE"), 
   api_key=os.getenv("OPENAI_API_KEY"),  
