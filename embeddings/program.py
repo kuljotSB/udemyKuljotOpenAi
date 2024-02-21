@@ -23,7 +23,7 @@ data="a lot of festivals are coming"
 
 response = client.embeddings.create(
     input = data,
-    model= "your_embedding_model_goes_here"
+    model= deployment_name
 )
 
 
