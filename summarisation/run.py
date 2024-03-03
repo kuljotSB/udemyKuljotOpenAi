@@ -14,7 +14,7 @@ def main():
         
         
         # Read text from file
-        text = open(file=r"C:\Users\HP VICTUS\Downloads\test_folder\udemyKuljotOpenAi\lab6\text_file.txt", encoding="utf8").read()
+        text = open(file=r"text_file.txt", encoding="utf8").read()
         
         print("\nSending request for summary to Azure OpenAI endpoint...\n\n")
         
