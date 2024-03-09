@@ -14,7 +14,7 @@ endpoint = os.getenv('search_endpoint')
 key = os.getenv('search_key')
 
 #creating an Azure OpenAI client
-client = AzureOpenAI(
+openai_client = AzureOpenAI(
   azure_endpoint = os.getenv("oai_base"), 
   api_key=os.getenv("oai_key"),  
   api_version="2023-05-15"
@@ -48,7 +48,7 @@ messages = [
     {"role":"user", "content":sum}
 ]
 
-chat_response = client.chat.completions.create(
+chat_response = openai_client.chat.completions.create(
     model="YOUR_MODEL_NAME",
     messages=messages
 )
