@@ -17,7 +17,7 @@ headers = {
     "api-key": key,
 }
 
-file_path = r"C:\Users\HP VICTUS\Downloads\voice.mp4"
+file_path = r".\voice.mp4"
 
 # Open the file in binary mode and close it after reading
 with open(file_path, "rb") as file:
