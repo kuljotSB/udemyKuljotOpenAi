@@ -54,5 +54,5 @@ chat_response = openai_client.chat.completions.create(
 )
 
 #printing the final response from the ChatCompletions API 
-print(chat_response["choices"][0]["message"]["content"])
+print(chat_response.choices[0].message.content)
 
