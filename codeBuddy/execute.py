@@ -35,12 +35,12 @@ def response(oai_key, oai_endpoint, user_input):
 num = input("enter 1 to debug code and 2 for unit tests to your code")
 
 if(num=='1'):
-    file = open(file=r'C:\Users\HP VICTUS\OneDrive\Desktop\OpenAiRepo\udemyKuljotOpenAi\lab7\factorial.py', encoding='utf8').read() #change the file path according to your user directory
+    file = open(file=r'.\factorial.py', encoding='utf8').read() #change the file path according to your user directory
     prompt="please debug this code in python \n" + file
     response(azure_key,azure_endpoint,prompt)
     
 else:
-    file=open(file=r'C:\Users\HP VICTUS\OneDrive\Desktop\OpenAiRepo\udemyKuljotOpenAi\lab7\function.py', encoding='utf8').read() #change the file path according to your user directory
+    file=open(file=r'.\function.py', encoding='utf8').read() #change the file path according to your user directory
     prompt="please provide unit tests for the following code in python \n" + file
     response(azure_key,azure_endpoint,prompt)
     
