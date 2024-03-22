@@ -64,7 +64,7 @@ while(count!=pages):
 llm = AzureChatOpenAI(
     openai_api_key=oai_key,
     openai_api_version="2023-05-15",
-    azure_deployment="deployModel",
+    azure_deployment=oai_deployment,
 )
 
 
