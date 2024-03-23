@@ -32,6 +32,5 @@ body={
 }
 
 response=requests.post(url,headers=headers,json=body).json()
-caption=response['choices'][0]['message']['content']
-print(caption)
+print(response)
 
