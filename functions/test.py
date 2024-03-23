@@ -54,13 +54,13 @@ location= function_argument['location']
 print(location)
 #calling open weather map API for information retrieval
 #fetching latitude and longitude of the specific location respectively
-url = "http://api.openweathermap.org/geo/1.0/direct?q=" + location + "&limit=1&appid=55c620986802c3a6d0fbb8f81733728d"
+url = "http://api.openweathermap.org/geo/1.0/direct?q=" + location + "&limit=1&appid=YOUR_API_KEY"
 response=requests.get(url)
 get_response=response.json()
 latitude=get_response[0]['lat']
 longitude = get_response[0]['lon']
 
-url_final = "https://api.openweathermap.org/data/2.5/weather?lat=" + str(latitude) + "&lon=" + str(longitude) + "&appid=55c620986802c3a6d0fbb8f81733728d"
+url_final = "https://api.openweathermap.org/data/2.5/weather?lat=" + str(latitude) + "&lon=" + str(longitude) + "&appid=YOUR_API_KEY"
 final_response = requests.get(url_final)
 final_response_json = final_response.json()
 weather=final_response_json['weather'][0]['description']
