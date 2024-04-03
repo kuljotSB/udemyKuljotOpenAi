@@ -15,7 +15,7 @@ deployment_name = os.getenv('get_embed_model')
 #creating an Azure OpenAI client
 client = AzureOpenAI(
   api_key = os.getenv("get_oai_key"),  
-  api_version = "2023-05-15",
+  api_version = "2024-02-15-preview",
   azure_endpoint =os.getenv("get_oai_base") 
 )
 
