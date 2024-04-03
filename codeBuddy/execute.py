@@ -15,7 +15,7 @@ def response(oai_key, oai_endpoint, user_input):
     client = AzureOpenAI(
         azure_endpoint=azure_endpoint,
         api_key = azure_key,
-        api_version="2023-05-15"
+        api_version="2024-02-15-preview"
     )
     #creating the "messages" part of the chat completions API
     messages=[
