@@ -27,7 +27,7 @@ oai_key=os.getenv('oai_key')
 
 #setting important configurations
 os.environ["OPENAI_API_TYPE"] = "azure"
-os.environ["OPENAI_API_VERSION"] = "2023-05-15"
+os.environ["OPENAI_API_VERSION"] = "2024-02-15-preview"
 os.environ["AZURE_OPENAI_ENDPOINT"] = oai_base
 os.environ["OPENAI_API_KEY"] = oai_key
 
