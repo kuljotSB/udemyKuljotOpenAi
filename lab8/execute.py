@@ -14,7 +14,7 @@ model_name="YOUR_AZURE_OAI_MODEL_HERE"
 client = AzureOpenAI(
     azure_endpoint=oai_endpoint,
     api_key=oai_key,
-    api_version="2023-05-15"
+    api_version="2024-02-15-preview"
 )
 
 def format_bounding_region(bounding_regions):
