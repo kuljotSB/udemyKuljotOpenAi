@@ -32,7 +32,7 @@ with open(file_path, "rb") as file:
     client = AzureOpenAI(
   azure_endpoint = endpoint_url, 
   api_key=key,  
-  api_version="2023-05-15"
+  api_version="2024-02-15-preview"
    )  
 
     response = client.chat.completions.create(
