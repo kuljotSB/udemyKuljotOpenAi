@@ -22,7 +22,7 @@ def main():
         client = AzureOpenAI(
             azure_endpoint="YOUR_AZURE_ENDPOINT_HERE",
             api_key="YOUR_AZURE_OPENAI_KEY_HERE",
-            api_version="2023-05-15"
+            api_version="2024-02-15-preview"
         )
         
         messages = [
